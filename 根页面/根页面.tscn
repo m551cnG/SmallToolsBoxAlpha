@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cjmyd7gcdrgxw"]
+
+[node name="根页面" type="Node2D"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 800.0
+offset_bottom = 600.0
