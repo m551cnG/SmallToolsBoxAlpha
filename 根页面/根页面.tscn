@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjmyd7gcdrgxw"]
-
-[ext_resource type="Script" uid="uid://cudrdshouo0nl" path="res://根页面/Code/initial_code.gd" id="1_4k6yr"]
+[gd_scene format=3 uid="uid://cjmyd7gcdrgxw"]
 
 [node name="根页面" type="Node2D"]
 
@@ -13,7 +11,3 @@ offset_bottom = 600.0
 [node name="Command" type="Node" parent="."]
 
 [node name="Node" type="Node" parent="Command"]
-
-[node name="initial" type="Node" parent="Command"]
-script = ExtResource("1_4k6yr")
-configFile_kill = true
