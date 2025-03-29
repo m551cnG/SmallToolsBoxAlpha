@@ -1,23 +1,29 @@
 extends Node
 
-@export var configFile_kill: bool = false # 用于判断是否需要重新加载配置文件
+var configFile_kill: bool = true # 用于判断是否需要重新加载配置文件
 
 func _ready():
-	if configFile_kill == true || Engine.is_editor_hint():
-		# 重新加载配置文件
+	if configFile_kill or Engine.is_editor_hint():
 		configFileKill()
 
 	initial_file_loading()
 
 func configFileKill():
-	IoControlMinLib.DeletePath("user://Config data",false) # 删除配置文件
+	var result = IoControlMinLib.DeletePath("user://Config data", false)
+	if result.success:
+		print("[删除配置文件成功]")
+	else:
+		printerr("[删除配置文件失败]：", result.problem)
 
 # 加载配置文件
 func initial_file_loading():
-	# 检查所需文件是否存在
-	var file_bool = IoControlMinLib.Exists("user://Config data",true) # 检查Config data配置文件是否存在
-	
-	if file_bool == false:
-		# 不存在则创建
-		IoControlMinLib.CopyDirectory("res://data for user/Config data", "user://Config data", true) # 复制配置文件到用户目录下
-		file_bool = true
+	var result = IoControlMinLib.Exists("user://Config data", true)
+	if not result.success:
+		print("[配置文件不存在，正在创建...]")
+		var copy_result = IoControlMinLib.CopyDirectory("res://data for user/Config data", "user://Config data", true)
+		if copy_result.success:
+			print("[配置文件复制成功！]")
+		else:
+			printerr("[配置文件复制失败]：", copy_result.problem)
+	else:
+		print("[配置文件已存在]")
