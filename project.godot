@@ -16,8 +16,11 @@ config/name_localized={
 }
 run/main_scene="uid://cjmyd7gcdrgxw"
 config/features=PackedStringArray("4.4", "C#", "Mobile")
-boot_splash/image="uid://bmbih4gcncfgt"
 config/icon="res://icon.svg"
+
+[autoload]
+
+IoControlMinLib="*res://Code/basicsCode/IO/IOControl_MinLib.cs"
 
 [display]
 
@@ -28,6 +31,11 @@ window/stretch/mode="viewport"
 [dotnet]
 
 project/assembly_name="小小工具盒alpha"
+
+[editor]
+
+movie_writer/speaker_mode=2
+movie_writer/disable_vsync=true
 
 [internationalization]
 
@@ -42,4 +50,4 @@ locale/locale_filter_mode=0
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
-anti_aliasing/quality/use_taa=true
+lights_and_shadows/use_physical_light_units=true
