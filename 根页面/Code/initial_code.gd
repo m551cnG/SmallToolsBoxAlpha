@@ -9,7 +9,7 @@ func _ready():
 	initial_file_loading()
 
 func configFileKill():
-	var result = IoControlMinLib.DeletePath("user://Config data", false)
+	var result = IOControl_MinLib.DeletePath("user://Config data", false)
 	if result.success:
 		print("[删除配置文件成功]")
 	else:
@@ -17,10 +17,10 @@ func configFileKill():
 
 # 加载配置文件
 func initial_file_loading():
-	var result = IoControlMinLib.Exists("user://Config data", true)
+	var result = IOControl_MinLib.Exists("user://Config data", true)
 	if not result.success:
 		print("[配置文件不存在，正在创建...]")
-		var copy_result = IoControlMinLib.CopyDirectory("res://data for user/Config data", "user://Config data", true)
+		var copy_result = IOControl_MinLib.CopyDirectory("res://data for user/Config data", "user://Config data", true)
 		if copy_result.success:
 			print("[配置文件复制成功！]")
 		else:

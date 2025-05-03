@@ -5,5 +5,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Code\basicsCode\IO\" />
+    <Folder Include="Code\Code Lib\Lang\" />
   </ItemGroup>
 </Project>
