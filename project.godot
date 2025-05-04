@@ -22,6 +22,8 @@ config/icon="res://icon.svg"
 
 InitialCode="*res://根页面/Code/initial_code.gd"
 IOControl_MinLib="*res://Code/Code Lib/IO/IOControl_MinLib.cs"
+JsonHelper="res://Code/Code Lib/Json/JsonHelper.cs"
+LangMainCode="*res://Code/Code Lib/Lang/LangMainCode.cs"
 
 [display]
 
@@ -37,6 +39,10 @@ project/assembly_name="小小工具盒alpha"
 
 movie_writer/speaker_mode=2
 movie_writer/disable_vsync=true
+
+[global_group]
+
+basics="基础类"
 
 [internationalization]
 

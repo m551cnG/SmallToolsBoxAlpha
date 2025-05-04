@@ -7,6 +7,7 @@ func _ready():
 		configFileKill()
 
 	initial_file_loading()
+	var Langcongig = LangMainCode.ConfigInitialization(null)
 
 func configFileKill():
 	var result = IOControl_MinLib.DeletePath("user://Config data", false)
